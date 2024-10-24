@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../utils/congig";
+import { API_URL } from "../utils/config";
 
 const Login = () => {
   const {
@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("user", JSON.stringify(response.data.user))
 
-      navigate("/dashboard")
+      window.location.href = "/dashboard"
 
     } catch (error) {
       // If there's an error, show an error toast

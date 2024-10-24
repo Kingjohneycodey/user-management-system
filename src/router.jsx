@@ -8,6 +8,7 @@ import ResetPassword from './pages/ResetPassword';
 import DashboardLayout from './components/layout/DashboardLayout';
 import Dashboard from './pages/user/Dashboard';
 import Users from './pages/user/Users';
+import Settings from './pages/user/Settings';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       { path: "home", element: <Dashboard /> },
       { path: 'users', element: <Users /> }, 
- 
+      { path: 'settings', element: <Settings /> }, 
     ],
   },
 ]);

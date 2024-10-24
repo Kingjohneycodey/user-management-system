@@ -4,14 +4,10 @@ import {
   FaAngleDown,
   FaBell,
   FaCog,
-  FaPlus,
-  FaSearch,
   FaSignOutAlt,
   FaUser,
   FaUserCog,
-  FaVideo,
 } from "react-icons/fa";
-import { FaArrowsToCircle, FaArrowsTurnRight, FaGroupArrowsRotate, FaKey } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 import { Outlet } from "react-router-dom";
 import NavLinks from "./NavLinks";
@@ -74,11 +70,11 @@ const AdminLayout = () => {
           </button>
           {dropDownOpen && (
             <div className="flex text-sm flex-col divide-y absolute bg-white top-16 right-5 border rounded-lg shadow-xl p-4">
-              <NavLinks href="/admin/account/viewprofile">
-                <FaUserCog /> Manage Account
+              <NavLinks href="/dashboard/settings">
+                <FaUserCog />&nbsp; Manage Account
               </NavLinks>
-              <NavLinks href="">
-              <FaSignOutAlt/> Logout
+              <NavLinks href="/login">
+              <FaSignOutAlt/>&nbsp; Logout
               </NavLinks>
             </div>
           )}

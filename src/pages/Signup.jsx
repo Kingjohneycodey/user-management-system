@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { API_URL } from "../utils/congig";
+import { API_URL } from "../utils/config";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
