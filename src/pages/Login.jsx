@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { API_URL } from "../utils/config";
 
 const Login = () => {
@@ -12,8 +12,6 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const navigate = useNavigate()
 
   const onSubmit = async (data) => {
     try {
@@ -27,7 +25,7 @@ const Login = () => {
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("user", JSON.stringify(response.data.user))
 
-      window.location.href = "/dashboard"
+      window.location.href = "/dashboard/home"
 
     } catch (error) {
       // If there's an error, show an error toast

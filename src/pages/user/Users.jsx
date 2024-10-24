@@ -7,8 +7,8 @@ const Table = () => {
   const [loading, setLoading] = useState(true);
   const [totalUsers, setTotalUsers] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize] = useState(1); // Set the page size (e.g., 10 users per page)
-  const [totalPages, setTotalPages] = useState(2);
+  const [pageSize] = useState(10); // Set the page size (e.g., 10 users per page)
+  const [totalPages, setTotalPages] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {

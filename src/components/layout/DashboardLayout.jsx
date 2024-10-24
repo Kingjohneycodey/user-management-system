@@ -9,7 +9,7 @@ import {
   FaUserCog,
 } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import NavLinks from "./NavLinks";
 
 const AdminLayout = () => {
@@ -17,6 +17,14 @@ const AdminLayout = () => {
   const [dropDownOpen, setDropDownOpen] = useState(false);
 
   // const user = getUser()
+
+  const navigate = useNavigate()
+
+
+  const logout = () => {
+    localStorage.clear()
+    navigate("/login")
+  }
 
   return (
     <div className="min-h-screen flex flex-col ">
@@ -42,7 +50,7 @@ const AdminLayout = () => {
           </svg>
         </button>
         <div className="flex w-fit lg:w-24">
-          <a href="#" className="-m-1.5 p-1.5 flex items-start lg:items-center gap-3 mx-auto font-bold">
+          <a href="/" className="-m-1.5 p-1.5 flex items-start lg:items-center gap-3 mx-auto font-bold">
             {/* <img className="h-8 w-auto rounded-full" src="l" alt="" /> */}
 
             <span className="text-xl">Dashboard</span>
@@ -120,7 +128,7 @@ const AdminLayout = () => {
 
             <span
               
-              className="py-2.5 px-4 rounded w-[100px] cursor-pointer transition duration-200  bg-gray-200 hover:bg-gray-400 flex items-center gap-2 fixed bottom-5"
+              className="py-2.5 px-4 rounded w-[100px] cursor-pointer transition duration-200  bg-gray-200 hover:bg-gray-400 flex items-center gap-2 fixed bottom-5" onClick={logout}
             >
               <FaSignOutAlt /> Logout
             </span>
